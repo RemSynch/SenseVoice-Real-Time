@@ -61,10 +61,12 @@
    python demo_record_natural_voice_lock.py
    ```
 
-   
 
-   运行示例
-   ![运行截图](./pics/运行截图.png)
+
+
+## 运行示例
+
+![运行截图](./pics/运行截图.png)
 
 
 
