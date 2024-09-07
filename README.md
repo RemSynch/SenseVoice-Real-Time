@@ -4,7 +4,7 @@
 
 
 
-运行步骤：
+## 运行步骤
 
 1. **下个CUDA版本的torch，版本号<=2.3就行（但是可能会下的比较慢）**
 
@@ -46,7 +46,7 @@
    项目中提供了脚本`audio_convert.py`，将音频转换为WAV格式并把采样率转换为16K，因为`speech_campplus`模型只能处理16K的音频。
    如果你的音频名字有修改，记得去`demo_record_natural_voice_lock.py`中也把文件名改一下
 
-   ```
+   ```Python
    def main():
        # 创建保存目录（如果目录不存在）
        save_directory = "audio_logs"
@@ -63,3 +63,29 @@
 
    
 
+   运行示例
+   ![运行截图](./pics/运行截图.png)
+
+
+
+如果你觉得运行效果不太行，可以修改一下参数，在`demo_record_natural_voice_lock.py`中
+
+```Python
+# 音频参数
+CHUNK = 1024
+FORMAT = pyaudio.paInt16
+CHANNELS = 1
+RATE = 16000
+MAX_TIME = 60  # 最大录音时间（秒）
+
+# VAD 参数
+THRESHOLD = 500
+SILENCE_LIMIT = 2
+
+# 声纹识别参数
+SIMILARITY_THRESHOLD = 0.1  # 相似度阈值，可以根据需要调整
+```
+
+
+
+另外我觉得SenseVoice转录错字率有点太高了，不过能识别粤语挺不错的占用显存也少，你也可以在本项目基础上改用其他模型来玩玩。
