@@ -55,5 +55,11 @@
        reference_audio = "speakers/speaker_mine_converted.wav"
    ```
 
+6. 运行`demo_record_natural_voice_lock.py`
+
+   ```
+   python demo_record_natural_voice_lock.py
+   ```
+
    
 
