@@ -1,0 +1,11 @@
+modelscope
+huggingface
+huggingface_hub
+funasr>=1.1.3
+numpy<=1.26.4
+gradio
+pyaudio
+addict
+datasets
+simplejson
+sortedcontainers
