@@ -2,7 +2,8 @@ speakers/*
 !speakers/.gitkeep
 audio_logs/*
 !audio_logs/.gitkeep
-SenseVoiceSmall/*
-!SenseVoiceSmall/.gitkeep
-speech_campplus_sv_zh_en_16k-common_advanced/*
-!speech_campplus_sv_zh_en_16k-common_advanced/.gitkeep
+models/SenseVoiceSmall/*
+!models/SenseVoiceSmall/.gitkeep
+models/speech_campplus_sv_zh_en_16k-common_advanced/*
+!models/speech_campplus_sv_zh_en_16k-common_advanced/.gitkeep
+/improve/

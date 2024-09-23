@@ -6,7 +6,7 @@
 from funasr import AutoModel
 from funasr.utils.postprocess_utils import rich_transcription_postprocess
 
-model_dir = "./SenseVoiceSmall"
+model_dir = "models/SenseVoiceSmall"
 
 model = AutoModel(
     model=model_dir,

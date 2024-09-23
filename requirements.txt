@@ -9,3 +9,7 @@ addict
 datasets
 simplejson
 sortedcontainers
+sounddevice
+soundfile
+sherpa-onnx
+scipy

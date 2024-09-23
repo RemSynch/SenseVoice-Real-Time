@@ -17,21 +17,27 @@ RATE = 16000
 MAX_TIME = 60  # 最大录音时间（秒）
 
 # VAD 参数
-THRESHOLD = 500
+THRESHOLD = 1000
 SILENCE_LIMIT = 2
 
 # 声纹识别参数
 SIMILARITY_THRESHOLD = 0.1  # 相似度阈值，可以根据需要调整
 
+accumulated_audio = np.array([])  # 用于存储累积的音频数据
+chunk_size = 200  # ms
+sample_rate = 16000
+chunk_stride = int(chunk_size * sample_rate / 1000)
+
+
 # 初始化声纹识别模型
 sv_pipeline = pipeline(
     task='speaker-verification',
-    model='./speech_campplus_sv_zh_en_16k-common_advanced',
+    model='models/speech_campplus_sv_zh-cn_16k-common',
     model_revision='v1.0.0'
 )
 
 # 初始化 SenseVoiceSmall 模型
-model_dir = "./SenseVoiceSmall"
+model_dir = "models/SenseVoiceSmall"
 m, kwargs = SenseVoiceSmall.from_pretrained(model=model_dir, device="cuda:0")
 m.eval()
 
@@ -76,7 +82,6 @@ def record_audio():
     p.terminate()
 
     return b''.join(audio_buffer)
-
 
 def save_audio(data, filename):
     wf = wave.open(filename, 'wb')
